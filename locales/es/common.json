@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "name": "Roberto Gallardo",
+    "location": "Guadalajara, Jalisco · contact@lrobertogallardo.mx",
+    "roles": [
+      "Desarrollador Full Stack .NET \uD83D\uDCBB",
+      "Arquitecto de Software \uD83D\uDCD6",
+      "Especialista en Azure y DevOps \uD83D\uDE80"
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador full stack que disfruta diseñar arquitecturas robustas y trabajar en toda la pila: desde procedimientos almacenados en SQL Server y reportes SSRS hasta servicios contenedorizados en Azure. Me importan el código limpio, las pruebas y las integraciones que simplemente funcionan.",
+    "skillsTitle": "Habilidades principales"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "items": [
+      { "company": "GEODIS", "role": "Desarrollador Full-Stack", "date": "2023 – Presente" },
+      { "company": "BANSÍ", "role": "Coordinador de Desarrollo B", "date": "2022 – 2023" },
+      { "company": "MEGACABLE", "role": "Desarrollador Senior", "date": "2019 – 2022" }
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "items": [
+      { "institution": "Universidad Veracruzana", "detail": "Lic. Sistemas Computacionales · 2015–2019" },
+      { "institution": "Fundamentos de Azure", "detail": "Emitido por Microsoft" }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": [
+      { "title": "Firmmo.org", "desc": "SaaS de firma digital con flujos criptográficos y colaboración." },
+      { "title": "ARQO UI", "desc": "Sistema de UI modular con arquitectura limpia y soporte multilenguaje." }
+    ]
+  },
+  "contact": {
+    "title": "Conectemos",
+    "description": "Estoy abierto a colaboraciones y proyectos interesantes. No dudes en escribir para comenzar una conversación.",
+    "button": "Contáctame"
+  },
+  "footer": "© {{year}} Roberto Gallardo — Construido con Next.js y Tailwind."
+}
