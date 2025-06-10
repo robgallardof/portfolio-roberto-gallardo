@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "greeting": "Hi! I am",
+    "name": "Roberto Gallardo",
+    "location": "Guadalajara, Jalisco · contact@robertogallardo.dev",
+    "startingYear": 2019,
+    "avatarAlt": "Portrait of Roberto Gallardo",
+    "roles": [
+      ".NET Full Stack Developer 💻",
+      "Software Architect 📐",
+      "Azure & DevOps Specialist 🚀"
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/robgallardof/",
+      "github": "https://github.com/robgallardof",
+      "email": "contact@robertogallardo.dev"
+    },
+    "contactInstruction": "You can contact me through any of the following platforms:"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I’m a Full Stack Developer focused on building well-structured software using .NET on the backend and Vue, React or Next.js on the frontend. I care about code that’s clear, maintainable, and makes sense.\n\nI’m self-taught and I improve by doing — learning what I need when I need it, and always questioning how to make things better. I don’t just write code that works — I want it to be solid, consistent, and easy to work with.\n\nI like clean architecture, logical structure, and building systems that actually solve problems.",
+    "skillsTitle": "Core Skills",
+    "skills": [
+      "Backend Development",
+      "Testing & Quality",
+      "DevOps & Cloud",
+      "Frontend Development",
+      "Tools & Workflows",
+      "Technical Documentation",
+      "Agile Methodologies"
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "years": "Years",
+    "experience": "of Experience",
+    "items": [
+      {
+        "company": "GEODIS",
+        "role": "Full Stack .NET Developer",
+        "date": "Jan 2023 – Present"
+      },
+      {
+        "company": "BANSI",
+        "role": ".NET Developer",
+        "date": "Feb 2022 – Dec 2022"
+      },
+      {
+        "company": "MEGACABLE",
+        "role": "Developer (VB.NET / C# / Java)",
+        "date": "Nov 2019 – Jan 2022"
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "institution": "AICAD Business School",
+        "detail": "Master’s Degree in Software Architecture (In Progress) · 2024–2025"
+      },
+      {
+        "institution": "Universidad Veracruzana",
+        "detail": "B.Sc. in Administrative Computer Systems · 2015–2019"
+      },
+      {
+        "institution": "CBTIS 66",
+        "detail": "Technical Programming Degree · 2012–2015"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "featured": "Featured Projects",
+    "openSource": "Open Source on GitHub",
+    "personal": [
+      {
+        "title": "Firmmo.org",
+        "desc": "Digital signature SaaS platform with cryptographic flows and collaboration.",
+        "demoUrl": "https://firmmo.org",
+        "repoUrl": "https://github.com/robgallardof/firmmo"
+      },
+      {
+        "title": "ARQO UI",
+        "desc": "Modular UI system with clean architecture and multilingual support.",
+        "repoUrl": "https://github.com/robgallardof/arqo.ui"
+      }
+    ],
+    "github": [
+      {
+        "name": "pdf-signer",
+        "description": "Cryptographically sign PDFs with iText7 and BouncyCastle.",
+        "repoUrl": "https://github.com/robgallardof/pdf-signer"
+      },
+      {
+        "name": "resume-generator",
+        "description": "Modern multilingual CV generator with PDF support.",
+        "repoUrl": "https://github.com/robgallardof/portfolio-roberto-gallardo"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "I'm open to collaborations and exciting projects. Feel free to reach out and start a conversation.",
+    "button": "Contact Me"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "aboutTitle": "About",
+    "description": "A passionate full-stack developer focused on creating performant and elegant web solutions.",
+    "linksTitle": "Quick Links",
+    "link": {
+      "about": "About",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contactTitle": "Contact",
+    "emailLabel": "Email:",
+    "copyright": "© {{year}} Roberto Gallardo",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "sections": {
+    "hero": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "ariaLabels": {
+    "linkedin": "Visit my LinkedIn profile",
+    "github": "Visit my GitHub profile",
+    "email": "Send me an email",
+    "downloadCV": "Download my resume"
+  }
+}

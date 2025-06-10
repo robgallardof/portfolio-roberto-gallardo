@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "greeting": "¡Hola! Soy",
+    "name": "Roberto Gallardo",
+    "location": "Guadalajara, Jalisco · contact@robertogallardo.dev",
+    "startingYear": 2019,
+    "avatarAlt": "Retrato de Roberto Gallardo",
+    "roles": [
+      "Desarrollador Full Stack .NET 💻",
+      "Arquitecto de Software 📐",
+      "Especialista en Azure & DevOps 🚀"
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/robgallardof/",
+      "github": "https://github.com/robgallardof",
+      "email": "contact@robertogallardo.dev"
+    },
+    "contactInstruction": "Puedes contactarme a través de cualquiera de las siguientes plataformas:"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Soy un Desarrollador Full Stack enfocado en construir software bien estructurado utilizando .NET en el backend y Vue, React o Next.js en el frontend. Me importa el código que es claro, mantenible y tiene sentido.\n\nSoy autodidacta y mejoro haciendo — aprendiendo lo que necesito cuando lo necesito, y siempre cuestionando cómo mejorar las cosas. No solo escribo código que funciona — quiero que sea sólido, consistente y fácil de trabajar.\n\nMe gusta la arquitectura limpia, la estructura lógica y construir sistemas que realmente resuelvan problemas.",
+    "skillsTitle": "Habilidades Clave",
+    "skills": [
+      "Desarrollo Backend",
+      "Pruebas y Calidad",
+      "DevOps y Nube (Cloud)",
+      "Desarrollo Frontend",
+      "Herramientas y Flujos de Trabajo",
+      "Documentación Técnica",
+      "Metodologías Ágiles"
+    ],
+    "descriptionShort": "Soy un Desarrollador Full Stack enfocado en .NET (backend) y Vue/React/Next.js (frontend). Quiero crear software claro, mantenible y robusto, con una arquitectura lógica que resuelva problemas reales. Soy autodidacta y aprendo en la práctica."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "years": "Años",
+    "experience": "de Experiencia",
+    "items": [
+      {
+        "company": "GEODIS",
+        "role": "Desarrollador Full Stack .NET",
+        "date": "Enero 2023 – Presente"
+      },
+      {
+        "company": "BANSÍ",
+        "role": "Desarrollador .NET",
+        "date": "Febrero 2022 – Diciembre 2022"
+      },
+      {
+        "company": "MEGACABLE",
+        "role": "Desarrollador (VB.NET / C# / Java)",
+        "date": "Noviembre 2019 – Enero 2022"
+      }
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "items": [
+      {
+        "institution": "AICAD Business School",
+        "detail": "Maestría en Arquitectura de Software (En Curso) · 2024–2025"
+      },
+      {
+        "institution": "Universidad Veracruzana",
+        "detail": "Lic. en Sistemas Computacionales Administrativos · 2015–2019"
+      },
+      {
+        "institution": "CBTIS 66",
+        "detail": "Carrera Técnica en Programación · 2012–2015"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "featured": "Proyectos Destacados",
+    "openSource": "Código Abierto en GitHub",
+    "personal": [
+      {
+        "title": "Firmmo.org",
+        "desc": "Plataforma SaaS de firma digital con flujos criptográficos y colaboración.",
+        "demoUrl": "https://firmmo.org",
+        "repoUrl": "https://github.com/robgallardof/firmmo"
+      },
+      {
+        "title": "ARQO UI",
+        "desc": "Sistema UI modular con arquitectura limpia y soporte multilingüe.",
+        "repoUrl": "https://github.com/robgallardof/arqo.ui"
+      }
+    ],
+    "github": [
+      {
+        "name": "pdf-signer",
+        "description": "Firma criptográficamente PDFs con iText7 y BouncyCastle.",
+        "repoUrl": "https://github.com/robgallardof/pdf-signer"
+      },
+      {
+        "name": "resume-generator",
+        "description": "Generador de CV moderno multilingüe con soporte PDF.",
+        "repoUrl": "https://github.com/robgallardof/portfolio-roberto-gallardo"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Conectemos",
+    "description": "Estoy abierto a colaboraciones y proyectos interesantes. No dudes en contactarme para iniciar una conversación.",
+    "button": "Contáctame"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "aboutTitle": "Sobre",
+    "description": "Un desarrollador full-stack apasionado enfocado en crear soluciones web elegantes y de alto rendimiento.",
+    "linksTitle": "Enlaces Rápidos",
+    "link": {
+      "about": "Sobre Mí",
+      "projects": "Proyectos",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "contactTitle": "Contacto",
+    "emailLabel": "Correo Electrónico:",
+    "copyright": "© {{year}} Roberto Gallardo",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "sections": {
+    "hero": "Inicio",
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "ariaLabels": {
+    "linkedin": "Visita mi perfil de LinkedIn",
+    "github": "Visita mi perfil de GitHub",
+    "email": "Envíame un correo electrónico",
+    "downloadCV": "Descargar mi CV"
+  }
+}

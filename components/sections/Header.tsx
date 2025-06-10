@@ -1,22 +1,27 @@
+'use client';
+
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/button';
+import { JSX } from 'react';
+import LanguageToggle from '../lang/LanguageToggle';
+import ThemeSwitcher from '../theme/ThemeSwitcher';
 
 /**
- * Simple header with site title and language switcher.
+ * Site header with language toggle and theme switcher.
+ *
+ * @returns {JSX.Element} The header component.
  */
 export default function Header(): JSX.Element {
-  const { t, i18n } = useTranslation();
-  const toggleLang = (): void => {
-    const nextLang = i18n.language === 'en' ? 'es' : 'en';
-    i18n.changeLanguage(nextLang).catch(console.error);
-  };
+  const { t } = useTranslation();
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 border-b border-border">
-      <h1 className="font-semibold">{t('hero.name')}</h1>
-      <Button variant="ghost" size="sm" onClick={toggleLang}>
-        {i18n.language === 'en' ? 'ES' : 'EN'}
-      </Button>
+    <header
+      className="w-full sticky top-0 z-50 bg-background/80 backdrop-blur-md px-6 py-4 flex items-center justify-end"
+      aria-label={t('header.label')}
+    >
+      <div className="flex items-center gap-4">
+        <ThemeSwitcher />
+        <LanguageToggle />
+      </div>
     </header>
   );
 }
