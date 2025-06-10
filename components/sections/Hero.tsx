@@ -108,7 +108,7 @@ export default function Hero(): JSX.Element {
             variants={itemVariants}
             className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed font-poppins"
           >
-            {t('about.descriptionShort')}
+            {t('about.shortDescription')}
           </motion.p>
 
           <motion.div

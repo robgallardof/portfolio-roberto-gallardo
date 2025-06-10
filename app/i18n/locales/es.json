@@ -30,7 +30,7 @@
       "Documentación Técnica",
       "Metodologías Ágiles"
     ],
-    "descriptionShort": "Soy un Desarrollador Full Stack enfocado en .NET (backend) y Vue/React/Next.js (frontend). Quiero crear software claro, mantenible y robusto, con una arquitectura lógica que resuelva problemas reales. Soy autodidacta y aprendo en la práctica."
+    "shortDescription": "Soy un Desarrollador Full Stack enfocado en .NET (backend) y Vue/React/Next.js (frontend). Quiero crear software claro, mantenible y robusto, con una arquitectura lógica que resuelva problemas reales. Soy autodidacta y aprendo en la práctica."
   },
   "experience": {
     "title": "Experiencia",
