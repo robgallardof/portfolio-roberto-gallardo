@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useEffect, useState, JSX } from "react";
-import Cookies from "js-cookie";
-import i18n from "@/app/i18n";
+import { useEffect, useState, JSX } from 'react';
+import Cookies from 'js-cookie';
+import i18n from '@/app/i18n';
 
-type Locale = "en" | "es";
+type Locale = 'en' | 'es';
 
 /**
  * LanguageToggle component.
  *
- * Renders a language switcher between English and Spanish.
+ * Renders a responsive language switcher between English and Spanish.
  * Syncs with i18n and persists preference using cookies.
  *
  * @returns {JSX.Element | null} The rendered toggle button.
@@ -18,11 +18,11 @@ export default function LanguageToggle(): JSX.Element | null {
   const [locale, setLocale] = useState<Locale | null>(null);
 
   const isValidLocale = (value: unknown): value is Locale =>
-    value === "en" || value === "es";
+    value === 'en' || value === 'es';
 
   useEffect(() => {
-    const cookieLang = Cookies.get("language");
-    let lang: Locale = "en";
+    const cookieLang = Cookies.get('language');
+    let lang: Locale = 'en';
 
     if (isValidLocale(cookieLang)) {
       lang = cookieLang;
@@ -34,14 +34,14 @@ export default function LanguageToggle(): JSX.Element | null {
     }
 
     i18n.changeLanguage(lang);
-    Cookies.set("language", lang, { expires: 365 });
+    Cookies.set('language', lang, { expires: 365 });
     setLocale(lang);
   }, []);
 
   const toggleLanguage = (): void => {
-    const nextLang: Locale = locale === "en" ? "es" : "en";
+    const nextLang: Locale = locale === 'en' ? 'es' : 'en';
     i18n.changeLanguage(nextLang);
-    Cookies.set("language", nextLang, { expires: 365 });
+    Cookies.set('language', nextLang, { expires: 365 });
     setLocale(nextLang);
   };
 
@@ -53,9 +53,11 @@ export default function LanguageToggle(): JSX.Element | null {
       aria-label="Toggle language"
       className="
         inline-flex items-center justify-center
-        h-8 w-8 min-w-[2rem]
         rounded-md bg-transparent
-        text-[13px] sm:text-sm font-medium uppercase tracking-wide
+        font-semibold uppercase tracking-wide
+        h-8 sm:h-9 md:h-10
+        min-w-[2rem] sm:min-w-[2.25rem] md:min-w-[2.5rem]
+        text-xs sm:text-sm md:text-base
         text-muted-foreground hover:text-primary
         transition-colors duration-200
         focus:outline-none focus-visible:ring-1 focus-visible:ring-ring

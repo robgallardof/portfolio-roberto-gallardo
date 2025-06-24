@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { JSX, useEffect, useMemo, useState } from 'react';
-import { useTheme } from 'next-themes';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadFull } from 'tsparticles';
-import type { Engine, ISourceOptions } from '@tsparticles/engine';
+import { JSX, useEffect, useMemo, useState } from "react";
+import { useTheme } from "next-themes";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadFull } from "tsparticles";
+import type { Engine, ISourceOptions } from "@tsparticles/engine";
 
 /**
  * ParticlesBackground component.
  *
- * Clean and professional animated background with subtle geometric particles.
- * Optimized for tech/portfolio websites and theme-aware.
+ * Animated background with geometric particles.
+ * Automatically adapts to light/dark theme.
  *
- * @returns {JSX.Element | null}
+ * @returns {JSX.Element | null} The particle background element or null if not ready.
  */
 export default function ParticlesBackground(): JSX.Element | null {
   const [engineReady, setEngineReady] = useState(false);
@@ -30,49 +30,45 @@ export default function ParticlesBackground(): JSX.Element | null {
   }, []);
 
   const options: ISourceOptions = useMemo(() => {
-    const isDark = resolvedTheme === 'dark';
+    const isDark = resolvedTheme === "dark";
 
     return {
       fullScreen: { enable: false },
-      background: { color: { value: 'transparent' } },
+      background: { color: { value: "transparent" } },
       particles: {
         number: {
-          value: 30,
+          value: 45,
           density: { enable: true, area: 1000 },
         },
         color: {
-          value: isDark ? '#00f2ff' : '#1f2937',
+          value: isDark ? "#00f2ff" : "#334155", 
         },
         shape: {
-          type: ['circle', 'edge', 'polygon'],
+          type: ["circle", "polygon", "edge"],
           options: {
-            polygon: {
-              sides: 5,
-            },
+            polygon: { sides: 6 },
           },
         },
         links: {
           enable: true,
-          distance: 130,
-          color: isDark ? '#00f2ff' : '#9ca3af',
-          opacity: 0.15,
+          distance: 120,
+          color: isDark ? "#00f2ff" : "#64748b", 
+          opacity: 0.25,
           width: 1,
         },
         opacity: {
-          value: isDark ? 0.1 : 0.2,
-          random: true,
+          value: 0.4,
+          random: false,
         },
         size: {
-          value: { min: 2, max: 4 },
+          value: { min: 2.5, max: 4.5 },
           random: true,
         },
         move: {
           enable: true,
-          speed: 0.3,
-          direction: 'none',
-          outModes: {
-            default: 'out',
-          },
+          speed: 0.4,
+          direction: "none",
+          outModes: { default: "out" },
         },
       },
       detectRetina: true,

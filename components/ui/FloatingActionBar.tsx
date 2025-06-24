@@ -73,14 +73,15 @@ export default function FloatingActionBar(): JSX.Element {
       className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50"
     >
       <nav
-        className="flex items-center justify-center gap-2 sm:gap-3 px-5 py-2 sm:px-6 sm:py-2.5 rounded-full
-                   backdrop-blur-md bg-[var(--card)] text-[var(--muted-foreground)] shadow-[0_4px_24px_rgba(0,0,0,0.05)]
-                   dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-colors duration-300 ease-[cubic-bezier(.4,0,.2,1)]"
         role="navigation"
         aria-label="Floating navigation"
+        className="flex items-center justify-center gap-2 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full backdrop-blur-lg
+          bg-background/80 text-muted-foreground border border-border shadow-[0_4px_24px_rgba(0,0,0,0.06)]
+          dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-all duration-300"
       >
         {navItems.map(({ id, icon, label }) => {
           const isActive = id === activeSection;
+
           return (
             <motion.button
               key={id}
@@ -90,14 +91,14 @@ export default function FloatingActionBar(): JSX.Element {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               aria-label={label}
               className={`group flex flex-col items-center justify-center gap-[2px] px-2.5 py-1.5 rounded-md
-                text-sm leading-none transition-all duration-200
+                text-sm leading-none transition-all duration-200 ease-in-out
                 ${
                   isActive
-                    ? "text-[var(--primary)] font-semibold scale-105"
-                    : "hover:text-[var(--primary)]"
+                    ? "text-primary font-semibold scale-[1.07]"
+                    : "hover:text-primary"
                 }`}
             >
-              <span className="text-[16px] sm:text-[17px]">{icon}</span>
+              <span className="text-base sm:text-lg">{icon}</span>
               <span className="hidden sm:inline-block text-[10px] tracking-tight">
                 {label}
               </span>

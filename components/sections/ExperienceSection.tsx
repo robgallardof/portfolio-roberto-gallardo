@@ -5,42 +5,59 @@ import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+/**
+ * Animation variants for the container list.
+ */
 const listContainerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.05,
+      staggerChildren: 0.06,
+      delayChildren: 0.1,
     },
   },
 };
 
+/**
+ * Animation variants for each item.
+ */
 const listItemVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.28,
-      ease: [0.4, 0, 0.2, 1],
+      duration: 0.4,
+      ease: "easeOut",
     },
   },
 };
 
+/**
+ * Hover/tap animation configuration for icons.
+ */
 const iconHover = {
-  whileHover: { scale: 1.08, rotate: 1 },
-  whileTap: { scale: 0.94 },
+  whileHover: {
+    scale: 1.12,
+    rotate: 1,
+    transition: { duration: 0.25, ease: "easeOut" },
+  },
+  whileTap: {
+    scale: 0.95,
+    transition: { duration: 0.2, ease: "easeInOut" },
+  },
 };
 
 /**
  * ExperienceSection component.
  *
- * Renders a two-column animated timeline section:
- * - Left side shows professional experience
- * - Right side shows academic education
- * Includes framer-motion animations and icon interactivity.
+ * Renders a timeline split into two animated sections:
+ * - Work experience (with briefcase icons)
+ * - Education history (with graduation cap icons)
  *
- * @returns {JSX.Element} The ExperienceSection component.
+ * Layout is fully responsive and includes a central title and animated items.
+ *
+ * @returns {JSX.Element} The rendered ExperienceSection component.
  */
 export default function ExperienceSection(): JSX.Element {
   const { t } = useTranslation();
@@ -59,19 +76,22 @@ export default function ExperienceSection(): JSX.Element {
   return (
     <section
       id="experience"
-      className="relative z-10 w-full min-h-screen text-foreground border-t border-border flex items-center py-24 sm:py-32"
+      className="w-full min-h-screen text-foreground flex flex-col items-center py-24 sm:py-32 md:py-40"
     >
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-24">
-        {/* ==== EXPERIENCE TIMELINE ==== */}
-        <div className="relative">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 font-poppins text-center md:text-left">
-            {t("experience.title")}
-          </h2>
+      {/* === Main Title === */}
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-poppins text-center mb-20">
+        {t("experience.mainTitle", "Experience & Education")}
+      </h2>
 
-          <div className="absolute top-[4.5rem] left-5 w-px h-[calc(100%-5.5rem)] bg-border pointer-events-none hidden md:block" />
+      <div className="w-full max-w-[100rem] px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-20">
+        {/* === Work Experience Timeline === */}
+        <div className="relative">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-12 font-poppins text-center md:text-left">
+            {t("experience.title")}
+          </h3>
 
           <motion.ul
-            className="relative z-10 flex flex-col gap-10"
+            className="flex flex-col gap-14 relative"
             variants={listContainerVariants}
             initial="hidden"
             whileInView="visible"
@@ -81,37 +101,34 @@ export default function ExperienceSection(): JSX.Element {
               <motion.li
                 key={index}
                 variants={listItemVariants}
-                className="relative flex items-start gap-5"
+                className="relative pl-14"
               >
-                <motion.div
-                  className="shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-transform"
-                  {...iconHover}
-                >
-                  <FaBriefcase size={16} />
-                </motion.div>
+                {/* Timeline connector */}
+                <span className="absolute left-0 top-1 w-4 h-4 bg-primary rounded-full shadow-md" />
+                {index !== experience.length - 1 && (
+                  <span className="absolute left-[0.45rem] top-6 h-full w-px bg-border" />
+                )}
 
-                <div className="flex flex-col gap-[2px] font-poppins">
-                  <p className="text-base font-semibold hover:text-primary transition-colors duration-200">
+                <div className="flex flex-col gap-[2px] font-poppins text-sm sm:text-base md:text-lg">
+                  <p className="font-semibold hover:text-primary transition-colors duration-200">
                     {company}
                   </p>
-                  <p className="text-sm text-muted-foreground">{role}</p>
-                  <p className="text-xs text-muted-foreground">{date}</p>
+                  <p className="text-muted-foreground">{role}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{date}</p>
                 </div>
               </motion.li>
             ))}
           </motion.ul>
         </div>
 
-        {/* ==== EDUCATION TIMELINE ==== */}
+        {/* === Education Timeline === */}
         <div className="relative">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 font-poppins text-center md:text-left">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-12 font-poppins text-center md:text-left">
             {t("education.title")}
-          </h2>
-
-          <div className="absolute top-[4.5rem] left-5 w-px h-[calc(100%-5.5rem)] bg-border pointer-events-none hidden md:block" />
+          </h3>
 
           <motion.ul
-            className="relative z-10 flex flex-col gap-10"
+            className="flex flex-col gap-14 relative"
             variants={listContainerVariants}
             initial="hidden"
             whileInView="visible"
@@ -121,20 +138,19 @@ export default function ExperienceSection(): JSX.Element {
               <motion.li
                 key={index}
                 variants={listItemVariants}
-                className="relative flex items-start gap-5"
+                className="relative pl-14"
               >
-                <motion.div
-                  className="shrink-0 w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-transform"
-                  {...iconHover}
-                >
-                  <FaGraduationCap size={16} />
-                </motion.div>
+                {/* Timeline connector */}
+                <span className="absolute left-0 top-1 w-4 h-4 bg-accent rounded-full shadow-md" />
+                {index !== education.length - 1 && (
+                  <span className="absolute left-[0.45rem] top-6 h-full w-px bg-border" />
+                )}
 
-                <div className="flex flex-col gap-[2px] font-poppins">
-                  <p className="text-base font-semibold hover:text-accent transition-colors duration-200">
+                <div className="flex flex-col gap-[2px] font-poppins text-sm sm:text-base md:text-lg">
+                  <p className="font-semibold hover:text-accent transition-colors duration-200">
                     {institution}
                   </p>
-                  <p className="text-sm text-muted-foreground">{detail}</p>
+                  <p className="text-muted-foreground">{detail}</p>
                 </div>
               </motion.li>
             ))}
