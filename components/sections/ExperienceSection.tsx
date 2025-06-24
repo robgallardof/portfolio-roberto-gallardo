@@ -2,7 +2,6 @@
 
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 /**
@@ -30,21 +29,6 @@ const listItemVariants = {
       duration: 0.4,
       ease: "easeOut",
     },
-  },
-};
-
-/**
- * Hover/tap animation configuration for icons.
- */
-const iconHover = {
-  whileHover: {
-    scale: 1.12,
-    rotate: 1,
-    transition: { duration: 0.25, ease: "easeOut" },
-  },
-  whileTap: {
-    scale: 0.95,
-    transition: { duration: 0.2, ease: "easeInOut" },
   },
 };
 
