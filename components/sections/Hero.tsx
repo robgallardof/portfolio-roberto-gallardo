@@ -1,15 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { JSX } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 /**
  * Motion container variants for staggered entrance.
  */
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -22,7 +22,7 @@ const containerVariants = {
 /**
  * Motion variants for items inside the container.
  */
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -34,7 +34,7 @@ const itemVariants = {
 /**
  * Motion variants for the avatar.
  */
-const avatarVariants = {
+const avatarVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -154,9 +154,15 @@ export default function Hero(): JSX.Element {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 bg-primary text-background text-sm font-semibold px-6 py-2 rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <FaDownload className="text-background group-hover:-translate-y-1 transition-transform duration-200" />
-            <span>Download CV</span>
+            <FaLock className="text-background group-hover:-translate-y-1 transition-transform duration-200" />
+            <span>{t("hero.cvButton")}</span>
           </motion.a>
+          <motion.p
+            variants={itemVariants}
+            className="-mt-3 text-xs text-muted-foreground text-center"
+          >
+            {t("hero.cvHint")}
+          </motion.p>
 
           <motion.div
             variants={itemVariants}

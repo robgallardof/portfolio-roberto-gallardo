@@ -1,5 +1,6 @@
-ignoredBuiltDependencies:
-  - '@tsparticles/engine'
-  - core-js
-  - react-tsparticles
-  - tsparticles-engine
+allowBuilds:
+  '@tailwindcss/oxide': false
+  '@tsparticles/engine': false
+  core-js: false
+  sharp: false
+  unrs-resolver: false

@@ -1,8 +1,10 @@
 'use client';
 
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
 import { LuSunMedium, LuMoon } from 'react-icons/lu';
+
+const noopSubscribe = () => () => {};
 
 /**
  * ThemeSwitcher component.
@@ -14,11 +16,8 @@ import { LuSunMedium, LuMoon } from 'react-icons/lu';
  */
 export default function ThemeSwitcher(): JSX.Element | null {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // true on the client, false during server rendering: avoids a theme hydration mismatch
+  const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
 
   if (!mounted) return null;
 

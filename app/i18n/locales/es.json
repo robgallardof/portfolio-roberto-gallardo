@@ -2,24 +2,27 @@
   "hero": {
     "greeting": "¡Hola! Soy",
     "name": "Roberto Gallardo",
-    "location": "Guadalajara, Jalisco · contact@robertogallardo.dev",
+    "location": "Guadalajara, Jalisco · robgallardofl@gmail.com",
     "startingYear": 2019,
     "avatarAlt": "Retrato de Roberto Gallardo",
     "roles": [
       "Desarrollador Full Stack .NET 💻",
       "Arquitecto de Software 📐",
-      "Especialista en Azure & DevOps 🚀"
+      "Herramientas de IA y MCP 🤖",
+      "Azure & DevOps 🚀"
     ],
     "links": {
       "linkedin": "https://www.linkedin.com/in/robgallardof/",
       "github": "https://github.com/robgallardof",
-      "email": "contact@robertogallardo.dev"
+      "email": "robgallardofl@gmail.com"
     },
-    "contactInstruction": "Puedes contactarme a través de cualquiera de las siguientes plataformas:"
+    "contactInstruction": "Puedes contactarme a través de cualquiera de las siguientes plataformas:",
+    "cvButton": "Ver CV",
+    "cvHint": "CV privado — pídeme la clave."
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Soy un Desarrollador Full Stack enfocado en construir software bien estructurado utilizando .NET en el backend y Vue, React o Next.js en el frontend. Me importa el código que es claro, mantenible y tiene sentido.\n\nSoy autodidacta y mejoro haciendo — aprendiendo lo que necesito cuando lo necesito, y siempre cuestionando cómo mejorar las cosas. No solo escribo código que funciona — quiero que sea sólido, consistente y fácil de trabajar.\n\nMe gusta la arquitectura limpia, la estructura lógica y construir sistemas que realmente resuelvan problemas.",
+    "description": "Soy Desarrollador Full Stack con Maestría en Arquitectura de Software. He trabajado con todas las generaciones de .NET — desde .NET Framework 2.0, 3.5 y 4.x hasta .NET Core y .NET 5 a 10 y 11 — y las migraciones entre ellas, con Vue, React y Next.js en el frontend.\n\nMe importa un código claro, mantenible y con sentido: Clean Architecture, CQRS y pipelines confiables con Docker, Kubernetes y Azure DevOps.\n\nÚltimamente también construyo herramientas de IA — servidores MCP, flujos de agentes y límites para que los agentes de IA hagan trabajo real de forma segura.",
     "skillsTitle": "Habilidades Clave",
     "skills": [
       "Desarrollo Backend",
@@ -30,7 +33,7 @@
       "Documentación Técnica",
       "Metodologías Ágiles"
     ],
-    "shortDescription": "Soy un Desarrollador Full Stack enfocado en .NET (backend) y Vue/React/Next.js (frontend). Quiero crear software claro, mantenible y robusto, con una arquitectura lógica que resuelva problemas reales. Soy autodidacta y aprendo en la práctica."
+    "shortDescription": "Desarrollador Full Stack .NET y Arquitecto de Software — de .NET Framework 2.0 a .NET 10/11 — con Vue, React y Next.js en el frontend. Construyo software claro y mantenible, y herramientas de IA que hacen trabajo real."
   },
   "experience": {
     "title": "Experiencia",
@@ -58,8 +61,8 @@
     "title": "Educación",
     "items": [
       {
-        "institution": "AICAD Business School",
-        "detail": "Maestría en Arquitectura de Software (En Curso) · 2024–2025"
+        "institution": "Università degli Studi Guglielmo Marconi · AICAD Business School",
+        "detail": "Maestría en Arquitectura de Software · 2024–2025"
       },
       {
         "institution": "Universidad Veracruzana",
@@ -77,27 +80,34 @@
     "openSource": "Código Abierto en GitHub",
     "personal": [
       {
-        "title": "Firmmo.org",
-        "desc": "Plataforma SaaS de firma digital con flujos criptográficos y colaboración.",
-        "demoUrl": "https://firmmo.org",
-        "repoUrl": "https://github.com/robgallardof/firmmo"
+        "title": "RepoRinse",
+        "desc": "CLI local y determinista en Rust que mantiene limpios los repos: quita trailers de coautoría de IA, ruido de espacios y Unicode invisible, con límites para Claude Code, Codex, Gemini CLI y Cursor.",
+        "repoUrl": "https://github.com/robgallardof/RepoRinse"
       },
       {
-        "title": "ARQO UI",
-        "desc": "Sistema UI modular con arquitectura limpia y soporte multilingüe.",
-        "repoUrl": "https://github.com/robgallardof/arqo.ui"
-      }
-    ],
-    "github": [
-      {
-        "name": "pdf-signer",
-        "description": "Firma criptográficamente PDFs con iText7 y BouncyCastle.",
-        "repoUrl": "https://github.com/robgallardof/pdf-signer"
+        "title": "davinci-resolve-mcp",
+        "desc": "Servidor MCP para editar en DaVinci Resolve hablando con un productor de IA: cortes verticales y horizontales, movimiento, subtítulos, música a tiempo y revisión antes de cada render.",
+        "repoUrl": "https://github.com/robgallardof/davinci-resolve-mcp"
       },
       {
-        "name": "resume-generator",
-        "description": "Generador de CV moderno multilingüe con soporte PDF.",
-        "repoUrl": "https://github.com/robgallardof/portfolio-roberto-gallardo"
+        "title": "social-publisher-mcp",
+        "desc": "Un community manager con IA para video corto como servidor MCP: escribe el copy de cada red, programa publicaciones y reporta qué funcionó.",
+        "repoUrl": "https://github.com/robgallardof/social-publisher-mcp"
+      },
+      {
+        "title": "declaracion",
+        "desc": "Asistente de impuestos personales en México dentro de tu agente de IA: lee CFDI, calcula ISR e IVA (RESICO) y guía la declaración. Tus datos se quedan en tu PC.",
+        "repoUrl": "https://github.com/robgallardof/declaracion"
+      },
+      {
+        "title": "wikdoc",
+        "desc": "Convierte cualquier carpeta de código en una base de conocimiento local con la que puedes chatear — embeddings y RAG con Ollama.",
+        "repoUrl": "https://github.com/robgallardof/wikdoc"
+      },
+      {
+        "title": "arquest",
+        "desc": "Cliente HTTP estilo Postman/Thunder con Next.js App Router, interfaz pensada en modo oscuro y PWA instalable offline.",
+        "repoUrl": "https://github.com/robgallardof/arquest"
       }
     ]
   },
@@ -109,7 +119,7 @@
   "footer": {
     "rights": "Todos los derechos reservados.",
     "aboutTitle": "Sobre",
-    "description": "Un desarrollador full-stack apasionado enfocado en crear soluciones web elegantes y de alto rendimiento.",
+    "description": "Desarrollador Full Stack .NET y arquitecto de software que construye software claro y mantenible, y herramientas de IA.",
     "linksTitle": "Enlaces Rápidos",
     "link": {
       "about": "Sobre Mí",

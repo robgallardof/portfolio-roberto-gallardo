@@ -3,12 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { JSX } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 /**
  * Animation variants for the container (staggered children).
  */
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -21,7 +21,7 @@ const containerVariants = {
 /**
  * Animation variants for individual items (heading, paragraph, button).
  */
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
@@ -71,7 +71,7 @@ export default function ContactSection(): JSX.Element {
 
         <motion.a
           variants={itemVariants}
-          href="mailto:contact@robertogallardo.dev"
+          href="mailto:robgallardofl@gmail.com"
           className="inline-block"
           title="Send me an email"
         >

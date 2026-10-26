@@ -1,21 +1,26 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { JSX } from 'react';
+import type { IconType } from 'react-icons';
+import { TbBrandCSharp, TbBrandOpenai, TbBrandVisualStudio } from 'react-icons/tb';
+import { DiMsqlServer } from 'react-icons/di';
+import { VscAzureDevops, VscVscode } from 'react-icons/vsc';
 
 /**
  * Represents a technical skill item.
  */
 type Skill = {
   name: string;
-  icon: string;
+  /** Simple Icons slug, or a react-icons component for brands Simple Icons no longer ships. */
+  icon: string | IconType;
 };
 
 /**
  * Animation variants for the skills container.
  */
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -28,7 +33,7 @@ const containerVariants = {
 /**
  * Animation variants for each skill item.
  */
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
@@ -51,15 +56,19 @@ export default function AboutSection(): JSX.Element {
     {
       title: 'Languages & Frameworks',
       skills: [
-        { name: 'C#', icon: 'csharp' },
-        { name: '.NET 8', icon: 'dotnet' },
+        { name: 'C#', icon: TbBrandCSharp },
+        { name: '.NET Framework 2.0 – 4.8', icon: 'dotnet' },
+        { name: '.NET Core / .NET 5 – 10 / 11', icon: 'dotnet' },
         { name: 'ASP.NET Core', icon: 'dotnet' },
+        { name: 'VB.NET', icon: 'dotnet' },
+        { name: 'Rust', icon: 'rust' },
+        { name: 'Python', icon: 'python' },
         { name: 'React', icon: 'react' },
         { name: 'Next.js', icon: 'nextdotjs' },
         { name: 'Vue.js', icon: 'vuedotjs' },
         { name: 'React Native', icon: 'react' },
         { name: 'Tailwind CSS', icon: 'tailwindcss' },
-        { name: 'ShadCN UI', icon: 'storybook' },
+        { name: 'shadcn/ui', icon: 'shadcnui' },
       ],
     },
     {
@@ -67,13 +76,25 @@ export default function AboutSection(): JSX.Element {
       skills: [
         { name: 'EF Core', icon: 'dotnet' },
         { name: 'WebSockets / SignalR', icon: 'socketdotio' },
-        { name: 'Stored Procedures', icon: 'sqlite' },
+        { name: 'Stored Procedures', icon: DiMsqlServer },
+      ],
+    },
+    {
+      title: 'AI & Agents',
+      skills: [
+        { name: 'Claude Code', icon: 'claude' },
+        { name: 'ChatGPT / Codex', icon: TbBrandOpenai },
+        { name: 'Gemini / Antigravity', icon: 'googlegemini' },
+        { name: 'Cursor', icon: 'cursor' },
+        { name: 'DeepSeek', icon: 'deepseek' },
+        { name: 'Ollama (local LLMs)', icon: 'ollama' },
+        { name: 'MCP Servers', icon: 'anthropic' },
       ],
     },
     {
       title: 'DevOps & Infrastructure',
       skills: [
-        { name: 'Azure DevOps', icon: 'azuredevops' },
+        { name: 'Azure DevOps', icon: VscAzureDevops },
         { name: 'Docker', icon: 'docker' },
         { name: 'Kubernetes', icon: 'kubernetes' },
         { name: 'CI/CD', icon: 'githubactions' },
@@ -87,15 +108,15 @@ export default function AboutSection(): JSX.Element {
       skills: [
         { name: 'MongoDB', icon: 'mongodb' },
         { name: 'PostgreSQL', icon: 'postgresql' },
-        { name: 'SQL Server', icon: 'microsoftsqlserver' },
-        { name: 'SSRS Reports', icon: 'filezilla' },
+        { name: 'SQL Server', icon: DiMsqlServer },
+        { name: 'SSRS Reports', icon: DiMsqlServer },
       ],
     },
     {
       title: 'IDEs & Tools',
       skills: [
-        { name: 'Visual Studio', icon: 'visualstudio' },
-        { name: 'VS Code', icon: 'visualstudiocode' },
+        { name: 'Visual Studio', icon: TbBrandVisualStudio },
+        { name: 'VS Code', icon: VscVscode },
         { name: 'Android Studio', icon: 'androidstudio' },
       ],
     },
@@ -150,13 +171,17 @@ export default function AboutSection(): JSX.Element {
                       }}
                       className="flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-medium text-foreground bg-muted border border-border rounded-md font-poppins cursor-default"
                     >
-                      <img
-                        src={`https://cdn.simpleicons.org/${skill.icon}/currentColor`}
-                        alt={skill.name}
-                        title={skill.name}
-                        className="w-5 h-5 shrink-0 dark:invert"
-                        loading="lazy"
-                      />
+                      {typeof skill.icon === 'string' ? (
+                        <img
+                          src={`https://cdn.simpleicons.org/${skill.icon}/currentColor`}
+                          alt={skill.name}
+                          title={skill.name}
+                          className="w-5 h-5 shrink-0 dark:invert"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <skill.icon className="w-5 h-5 shrink-0" aria-hidden="true" />
+                      )}
                       <span>{skill.name}</span>
                     </motion.li>
                   ))}

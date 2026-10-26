@@ -1,8 +1,12 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import i18n from "@/app/i18n";
-import { useEffect, useState } from "react";
 
+function subscribeToInit(onChange: () => void) {
+  i18n.on("initialized", onChange);
+  return () => i18n.off("initialized", onChange);
+}
 
 /**
  * Prevents rendering until the i18n language is synchronized,
@@ -16,17 +20,11 @@ export default function LanguageGate({
 }: {
   children: React.ReactNode;
 }) {
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    if (i18n.isInitialized) {
-      setReady(true);
-    } else {
-      i18n.on("initialized", () => {
-        setReady(true);
-      });
-    }
-  }, []);
+  const ready = useSyncExternalStore(
+    subscribeToInit,
+    () => i18n.isInitialized,
+    () => false
+  );
 
   if (!ready) return null;
 

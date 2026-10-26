@@ -37,23 +37,15 @@ export const metadata: Metadata = {
     'Clean Code',
     'Portfolio',
   ],
-  metadataBase: new URL('https://robertogallardo.mx'),
+  metadataBase: new URL('https://robertogallardo.dev'),
   openGraph: {
     title: 'Roberto Gallardo – Full Stack .NET Developer',
     description:
       'Explore the professional portfolio of Roberto Gallardo. Clean architecture. Modern development. Scalable solutions.',
-    url: 'https://lrobertogallardo.mx',
+    url: 'https://robertogallardo.dev',
     siteName: 'Roberto Gallardo',
     locale: 'en_US',
     type: 'website',
-    images: [
-      {
-        url: 'https://lrobertogallardo.mx/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Roberto Gallardo – Full Stack Developer',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -61,7 +53,6 @@ export const metadata: Metadata = {
     description:
       'Clean code, modern architecture, and full stack web development expertise using .NET, Next.js, and Azure.',
     creator: '@robgallardof',
-    images: ['https://lrobertogallardo.mx/og-image.png'],
   },
   themeColor: '#000000',
 };

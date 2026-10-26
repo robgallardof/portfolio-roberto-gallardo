@@ -2,12 +2,12 @@
 
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 /**
  * Animation variants for the container list.
  */
-const listContainerVariants = {
+const listContainerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -20,7 +20,7 @@ const listContainerVariants = {
 /**
  * Animation variants for each item.
  */
-const listItemVariants = {
+const listItemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,

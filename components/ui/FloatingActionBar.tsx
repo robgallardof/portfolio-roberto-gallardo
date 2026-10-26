@@ -7,9 +7,35 @@ import {
   FaEnvelope,
   FaHome,
 } from "react-icons/fa";
-import { JSX, useEffect, useState } from "react";
+import { JSX, useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+
+const SECTION_IDS = ["hero", "about", "experience", "projects", "contact"];
+
+/** Section whose top edge is closest to the top of the viewport. */
+function currentSection(): string {
+  let current = "hero";
+  let minDistance = Infinity;
+
+  for (const id of SECTION_IDS) {
+    const el = document.getElementById(id);
+    if (el) {
+      const distance = Math.abs(el.getBoundingClientRect().top);
+      if (distance < minDistance) {
+        minDistance = distance;
+        current = id;
+      }
+    }
+  }
+
+  return current;
+}
+
+function subscribeToScroll(onChange: () => void) {
+  window.addEventListener("scroll", onChange, { passive: true });
+  return () => window.removeEventListener("scroll", onChange);
+}
 
 /**
  * FloatingActionBar component.
@@ -33,37 +59,12 @@ export default function FloatingActionBar(): JSX.Element {
     { id: "contact", icon: <FaEnvelope />, label: t("sections.contact") },
   ];
 
-  const [activeSection, setActiveSection] = useState("hero");
+  const activeSection = useSyncExternalStore(subscribeToScroll, currentSection, () => "hero");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
-  const updateActiveSection = () => {
-    let current = "hero";
-    let minDistance = Infinity;
-
-    for (const { id } of navItems) {
-      const el = document.getElementById(id);
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        const distance = Math.abs(rect.top);
-        if (distance < minDistance) {
-          minDistance = distance;
-          current = id;
-        }
-      }
-    }
-
-    setActiveSection(current);
-  };
-
-  useEffect(() => {
-    updateActiveSection();
-    window.addEventListener("scroll", updateActiveSection, { passive: true });
-    return () => window.removeEventListener("scroll", updateActiveSection);
-  }, []);
 
   return (
     <motion.div

@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState, JSX } from 'react';
+import { useEffect, JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 import Cookies from 'js-cookie';
-import i18n from '@/app/i18n';
 
 type Locale = 'en' | 'es';
 
@@ -15,7 +15,8 @@ type Locale = 'en' | 'es';
  * @returns {JSX.Element | null} The rendered toggle button.
  */
 export default function LanguageToggle(): JSX.Element | null {
-  const [locale, setLocale] = useState<Locale | null>(null);
+  const { i18n } = useTranslation();
+  const locale: Locale = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
 
   const isValidLocale = (value: unknown): value is Locale =>
     value === 'en' || value === 'es';
@@ -35,17 +36,13 @@ export default function LanguageToggle(): JSX.Element | null {
 
     i18n.changeLanguage(lang);
     Cookies.set('language', lang, { expires: 365 });
-    setLocale(lang);
-  }, []);
+  }, [i18n]);
 
   const toggleLanguage = (): void => {
     const nextLang: Locale = locale === 'en' ? 'es' : 'en';
     i18n.changeLanguage(nextLang);
     Cookies.set('language', nextLang, { expires: 365 });
-    setLocale(nextLang);
   };
-
-  if (!locale) return null;
 
   return (
     <button

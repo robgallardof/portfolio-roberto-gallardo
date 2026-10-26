@@ -1,10 +1,15 @@
 "use client";
 
-import { JSX, useEffect, useMemo, useState } from "react";
+import { JSX, useMemo } from "react";
 import { useTheme } from "next-themes";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import type { Engine, ISourceOptions } from "@tsparticles/engine";
+
+/** Registers every tsParticles feature once; must stay stable for ParticlesProvider. */
+const initEngine = async (engine: Engine): Promise<void> => {
+  await loadFull(engine);
+};
 
 /**
  * ParticlesBackground component.
@@ -15,19 +20,7 @@ import type { Engine, ISourceOptions } from "@tsparticles/engine";
  * @returns {JSX.Element | null} The particle background element or null if not ready.
  */
 export default function ParticlesBackground(): JSX.Element | null {
-  const [engineReady, setEngineReady] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine: Engine) => {
-      await loadFull(engine);
-    }).then(() => setEngineReady(true));
-  }, []);
 
   const options: ISourceOptions = useMemo(() => {
     const isDark = resolvedTheme === "dark";
@@ -75,14 +68,17 @@ export default function ParticlesBackground(): JSX.Element | null {
     };
   }, [resolvedTheme]);
 
-  if (!isMounted || !engineReady || !resolvedTheme) return null;
+  // resolvedTheme is undefined on the server; the provider renders nothing until the engine is loaded.
+  if (!resolvedTheme) return null;
 
   return (
-    <Particles
-      id="tsparticles"
-      options={options}
-      key={resolvedTheme}
-      className="fixed inset-0 -z-10 pointer-events-none select-none"
-    />
+    <ParticlesProvider init={initEngine}>
+      <Particles
+        id="tsparticles"
+        options={options}
+        key={resolvedTheme}
+        className="fixed inset-0 -z-10 pointer-events-none select-none"
+      />
+    </ParticlesProvider>
   );
 }

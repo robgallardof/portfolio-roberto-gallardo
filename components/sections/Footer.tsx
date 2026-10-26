@@ -45,7 +45,7 @@ export default function Footer(): JSX.Element {
             <span className="hidden sm:inline">GitHub</span>
           </a>
           <a
-            href="https://linkedin.com/in/lrobertogallardo"
+            href="https://www.linkedin.com/in/robgallardof/"
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
@@ -56,7 +56,7 @@ export default function Footer(): JSX.Element {
             <span className="hidden sm:inline">LinkedIn</span>
           </a>
           <a
-            href="mailto:contact@robertogallardo.dev"
+            href="mailto:robgallardofl@gmail.com"
             title="Email"
             aria-label={t('ariaLabels.email')}
             className="flex items-center gap-2 hover:text-primary transition-transform duration-300 hover:scale-110"
