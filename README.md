@@ -27,5 +27,5 @@ pnpm build
 <p align="center"><a href="#top">Back to top</a></p>
 
 <!-- readme-builder:signature:start -->
-<p align="center"><a href="https://github.com/robgallardof"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/brand/signature-en-dark.svg" /><img src="assets/readme/brand/signature-en-light.svg" alt="Roberto Gallardo / Portfolio / Roberto Gallardo" width="360" /></picture></a></p>
+<p align="center"><a href="https://github.com/robgallardof"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/brand/signature-en-dark.svg" /><img src="assets/readme/brand/signature-en-light.svg" alt="Roberto Gallardo / Portfolio / Roberto Gallardo" width="100%" /></picture></a></p>
 <!-- readme-builder:signature:end -->
